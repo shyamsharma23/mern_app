@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
+const config = require('config');
+
 
 const connectDB = async()=>{
     try{
-        const conn = await mongoose.connect(process.env.MONGO_URI)
+        const conn = await mongoose.connect(config.get('MONGO_URI'))
 
         console.log(`MongoDB Connected: ${conn.connection.host}`)
     }
