@@ -1,4 +1,0 @@
-{
-    "MONGO_URI":"mongodb+srv://shyam:piku1234@cluster0.b741l.mongodb.net/?retryWrites=true&w=majority",
-    "jwtSecret":"secret"
-}

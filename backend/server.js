@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 const express = require("express");
-const dotenv = require('dotenv').config();
-const port = 3000
+
+const port = process.env.PORT || 3000
 const {errorHandler} = require('./middleware/errorMiddleware');
 const connectDB = require('./db_config/db')
 
@@ -20,6 +22,14 @@ app.use('/api/users', require('./routes/userRoutes'))
 
 
 app.use(errorHandler);
+
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
 
 
 app.listen(port, ()=>{

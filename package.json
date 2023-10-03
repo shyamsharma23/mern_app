@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
-    "server": "nodemon backend/server.js",
+    "server": "nodemon -L backend/server.js",
     "client": "npm start --prefix frontend"
   },
   "author": "Shyam Sharma",
@@ -21,6 +21,6 @@
     "react-router-dom": "6.10"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.22"
   }
 }
